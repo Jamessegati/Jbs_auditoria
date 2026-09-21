@@ -312,8 +312,13 @@ const QUESTION_BANK = {
       'registrar operação, documentos, período, cálculos e fonte normativa aplicada.','guardar só o percentual final porque dispensa reconstituição da base.','substituir notas e contratos por opinião verbal do responsável.','citar apenas o nome do tributo sem identificar o dispositivo usado.','conservar somente os pagamentos bancários do período mais recente.','Uma conclusão fiscal deve permitir refazer cada premissa e localizar sua base normativa.']
   ]
 };
+const ANSWER_SLOTS = [
+  [2,0,4,1,3],[4,2,0,3,1],[1,4,2,0,3],[3,1,4,2,0],[0,3,1,4,2],
+  [2,4,1,3,0],[1,3,0,2,4],[4,0,3,1,2],[3,2,4,0,1],[0,4,2,1,3],
+  [2,1,3,0,4],[4,3,1,2,0],[1,0,4,3,2]
+];
 LESSON_CONTENT.quiz = LESSON_CONTENT.modules.flatMap(module => QUESTION_BANK[module.id].map((row,index) => {
-  const slot = (module.number + index) % 5;
+  const slot = ANSWER_SLOTS[module.number-1][index];
   const wrong = row.slice(2,6);
   const options = [...wrong];
   options.splice(slot,0,row[1]);
