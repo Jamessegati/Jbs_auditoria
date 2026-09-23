@@ -1,0 +1,21 @@
+const checkedOn = '2026-09-22';
+
+export const SOURCE_CATALOG = [
+  { id: 'ec132', title: 'Emenda Constitucional nº 132/2023', agency: 'Planalto', url: 'https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm', sourceType: 'norma', verifiedAt: checkedOn, scope: 'Arquitetura constitucional e transição' },
+  { id: 'lc214', title: 'Lei Complementar nº 214/2025', agency: 'Planalto', url: 'https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm', sourceType: 'norma', verifiedAt: checkedOn, scope: 'IBS, CBS e Imposto Seletivo' },
+  { id: 'lc227', title: 'Lei Complementar nº 227/2026', agency: 'Planalto', url: 'https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp227.htm', sourceType: 'norma', verifiedAt: checkedOn, scope: 'Comitê Gestor e alterações da LC 214' },
+  { id: 'portal-rtc', title: 'Portal da Reforma Tributária', agency: 'Receita Federal', url: 'https://www.gov.br/receitafederal/pt-br/assuntos/reforma-tributaria', sourceType: 'servico', verifiedAt: checkedOn, scope: 'Serviços e orientações oficiais' },
+  { id: 'portal-nfse', title: 'Portal Nacional da NFS-e', agency: 'Receita Federal', url: 'https://www.gov.br/nfse/pt-br', sourceType: 'servico', verifiedAt: checkedOn, scope: 'NFS-e e documentação técnica' },
+  { id: 'manual-plataforma-cbs', title: 'Manual Plataforma da CBS', agency: 'Receita Federal', url: 'https://www.gov.br/receitafederal/pt-br/assuntos/reforma-tributaria', sourceType: 'manual', verifiedAt: checkedOn, scope: 'Portal, DF-e, API, calculadora e apuração' },
+  { id: 'manual-servicos-rtc', title: 'Manual de Serviços da RTC', agency: 'Receita Federal', url: 'https://www.gov.br/receitafederal/pt-br/assuntos/reforma-tributaria', sourceType: 'manual', verifiedAt: checkedOn, scope: 'Portal, acesso, calculadora, apuração e atendimento' },
+  { id: 'ambiente-beta', title: 'Comunicado do Ambiente de Produção Beta', agency: 'Receita Federal', url: 'https://www.gov.br/receitafederal/pt-br/assuntos/reforma-tributaria', sourceType: 'piloto', verifiedAt: checkedOn, scope: 'Simulação, DF-e reais e ambiente beta' },
+  { id: 'calculadora-faq', title: 'FAQ da Calculadora da Plataforma da CBS', agency: 'Receita Federal', url: 'https://www.gov.br/receitafederal/pt-br/assuntos/reforma-tributaria', sourceType: 'piloto', verifiedAt: checkedOn, scope: 'Motor de cálculo, ERP e blocos IBS/CBS' },
+  { id: 'aa-cbs', title: 'Apuração Assistida da CBS', agency: 'Receita Federal', url: 'https://www.gov.br/receitafederal/pt-br/assuntos/reforma-tributaria', sourceType: 'piloto', verifiedAt: checkedOn, scope: 'Débitos, créditos, ajustes e conformidade' },
+  { id: 'devolucoes', title: 'Devoluções, Transferências e Ressarcimentos', agency: 'Receita Federal', url: 'https://www.gov.br/receitafederal/pt-br/assuntos/reforma-tributaria', sourceType: 'piloto', verifiedAt: checkedOn, scope: 'Créditos, transferências e ressarcimento' },
+  { id: 'cooperativas', title: 'Regime Específico de Cooperativas', agency: 'Receita Federal', url: 'https://www.gov.br/receitafederal/pt-br/assuntos/reforma-tributaria', sourceType: 'manual', verifiedAt: checkedOn, scope: 'Opção de cooperativas por IBS e CBS' },
+  { id: 'modulo-imoveis', title: 'Curso RTC - Módulo 13: Bens Imóveis', agency: 'Receita Federal', url: 'https://www.gov.br/receitafederal/pt-br/assuntos/reforma-tributaria', sourceType: 'curso', verifiedAt: checkedOn, scope: 'Alienação, locação, CIB e redutores' },
+  { id: 'modulo-dere', title: 'Curso RTC - Módulos 11 e 12: DeRE', agency: 'Receita Federal', url: 'https://www.gov.br/receitafederal/pt-br/assuntos/reforma-tributaria', sourceType: 'curso', verifiedAt: checkedOn, scope: 'Regimes específicos, saúde, apostas e financeiros' },
+  { id: 'modulo-setorial', title: 'Curso RTC - Módulos 14 a 17', agency: 'Receita Federal', url: 'https://www.gov.br/receitafederal/pt-br/assuntos/reforma-tributaria', sourceType: 'curso', verifiedAt: checkedOn, scope: 'Agro, ZFM, combustíveis, energia e IS' },
+  { id: 'modulo-comex', title: 'Curso RTC - Módulos 2 e 9', agency: 'Receita Federal', url: 'https://www.gov.br/receitafederal/pt-br/assuntos/reforma-tributaria', sourceType: 'curso', verifiedAt: checkedOn, scope: 'Comércio exterior, economia digital e remessas' }
+];
+
