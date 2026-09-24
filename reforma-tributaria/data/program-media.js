@@ -11,4 +11,3 @@ export const MEDIA_BY_WEEK = Object.fromEntries(Array.from({ length: 12 }, (_, i
   return [id, { liveUrl: '', recordingUrl: '', supportVideoIds, supportVideos: VIDEO_LIBRARY.filter(video => supportVideoIds.includes(video.youtubeId)), materials: [] }];
 }));
 export const mediaForWeek = weekId => MEDIA_BY_WEEK[weekId] ?? null;
-

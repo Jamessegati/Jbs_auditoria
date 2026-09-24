@@ -60,4 +60,3 @@ export const QUESTION_BANK = [
   ...trackQuestions('track-imoveis-avancado', 'modulo-imoveis', 'bens imóveis avançado', 'A natureza da operação, o CIB e o documento exigido.'),
   ...trackQuestions('track-is-avancado', 'modulo-setorial', 'Imposto Seletivo avançado', 'O enquadramento legal, a etapa tributável e o documento.')
 ];
-

@@ -54,4 +54,3 @@ export function scoreAssessment(questions, answers) {
     .filter(([id, answer]) => questions.find(question => question.id === id)?.correctIndex === answer)
     .length;
 }
-

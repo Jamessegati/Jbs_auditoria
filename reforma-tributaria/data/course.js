@@ -119,4 +119,3 @@ export const COURSE_BLOCKS = [
   block('track-imoveis-avancado', 'track', 23, 'Trilha: bens imóveis avançado', ['modulo-imoveis', 'lc214'], false),
   block('track-is-avancado', 'track', 24, 'Trilha: Imposto Seletivo avançado', ['modulo-setorial', 'lc214'], false)
 ].map(blockData => ({ ...blockData, ...(CORE_DETAILS[blockData.id] ?? {}), ...(LAB_DETAILS[blockData.id] ?? {}), ...(TRACK_DETAILS[blockData.id] ?? {}) }));
-

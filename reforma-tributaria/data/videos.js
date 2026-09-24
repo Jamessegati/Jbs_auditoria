@@ -16,4 +16,3 @@ export const VIDEO_LIBRARY = [
 export function videosForBlock(blockId) {
   return VIDEO_LIBRARY.filter(video => video.blockId === blockId);
 }
-

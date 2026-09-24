@@ -30,11 +30,10 @@ export function recordAssessment(state, weekId, correct, total) {
   const safeCorrect = Number.isFinite(correct) ? Math.max(0, correct) : 0;
   const safeTotal = Number.isFinite(total) ? Math.max(0, total) : 0;
   const percent = safeTotal ? Math.round((safeCorrect / safeTotal) * 100) : 0;
-  return { ...state, assessments: { ...state.assessments, [weekId]: { correct: safeCorrect, total: safeTotal, percent, passed: percent >= 80 } } };
+  return { ...state, assessments: { ...state.assessments, [weekId]: { correct: safeCorrect, total: safeTotal, percent, passed: safeTotal > 0 && safeCorrect / safeTotal >= 0.8 } } };
 }
 
 export function updateDeliverableDraft(state, kind, field, value) {
   if (!['impactMatrix', 'implementationPlan'].includes(kind) || typeof field !== 'string' || typeof value !== 'string') return state;
   return { ...state, deliverables: { ...state.deliverables, [kind]: { ...state.deliverables[kind], [field]: value } } };
 }
-

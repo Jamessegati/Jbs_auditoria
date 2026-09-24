@@ -1,0 +1,11 @@
+{
+  "name": "aula-reforma-tributaria-com-questionario",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:apostila": "node scripts/build-apostila.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "validate": "node scripts/validate-course.mjs",
+    "sync:backend-key": "node scripts/sync-apps-script-key.mjs"
+  }
+}

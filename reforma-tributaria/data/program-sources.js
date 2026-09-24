@@ -1,10 +1,10 @@
-const reviewedAt = '2026-09-23';
+const reviewedAt = '2026-09-24';
 export const PROGRAM_SOURCES = [
   { id: 'ec132', title: 'EC nº 132/2023', url: 'https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm', kind: 'norma', reviewedAt, scope: 'Arquitetura constitucional e transição' },
-  { id: 'lc214', title: 'LC nº 214/2025 (texto compilado)', url: 'https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214compilado.htm', kind: 'norma', reviewedAt, scope: 'IBS, CBS e IS' },
+  { id: 'lc214', title: 'LC nº 214/2025 — texto atualizado na Câmara', url: 'https://www2.camara.leg.br/legin/fed/leicom/2025/leicomplementar-214-16-janeiro-2025-796905-normaatualizada-pl.html', kind: 'norma', reviewedAt, scope: 'IBS, CBS e IS; consultar redação e efeitos das alterações, inclusive LC 227/2026' },
+  { id: 'lc123', title: 'LC nº 123/2006 — Simples Nacional', url: 'https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm', kind: 'norma', reviewedAt, scope: 'Fator R, anexos e enquadramento no Simples' },
   { id: 'orientacoes-rtc', title: 'Orientações da Reforma Tributária do Consumo', url: 'https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/acoes-e-programas/programas-e-atividades/reforma-tributaria-do-consumo/orientacoes-da-reforma-tributaria', kind: 'orientacao', reviewedAt, scope: 'Leiautes e operações' },
   { id: 'curso-rfb-cfc', title: 'Curso RTC RFB/CFC', url: 'https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/acoes-e-programas/programas-e-atividades/reforma-tributaria-do-consumo/curso', kind: 'orientacao', reviewedAt, scope: 'Módulos e materiais de apoio' },
   { id: 'manual-cbs', title: 'Manual Plataforma da CBS', url: 'https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/publicacoes/manuais/reforma-tributaria-do-consumo/manual-plataforma-cbs-21-maio-2026-07h40.pdf', kind: 'piloto', reviewedAt, scope: 'Plataforma e apuração assistida' },
   { id: 'construcao-rfb', title: 'Construção Civil', url: 'https://www.gov.br/receitafederal/pt-br/assuntos/construcao-civil', kind: 'orientacao', reviewedAt, scope: 'Cadastro e rotinas de obra' },
 ];
-

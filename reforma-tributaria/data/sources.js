@@ -18,4 +18,3 @@ export const SOURCE_CATALOG = [
   { id: 'modulo-setorial', title: 'Curso RTC - Módulos 14 a 17', agency: 'Receita Federal', url: 'https://www.gov.br/receitafederal/pt-br/assuntos/reforma-tributaria', sourceType: 'curso', verifiedAt: checkedOn, scope: 'Agro, ZFM, combustíveis, energia e IS' },
   { id: 'modulo-comex', title: 'Curso RTC - Módulos 2 e 9', agency: 'Receita Federal', url: 'https://www.gov.br/receitafederal/pt-br/assuntos/reforma-tributaria', sourceType: 'curso', verifiedAt: checkedOn, scope: 'Comércio exterior, economia digital e remessas' }
 ];
-

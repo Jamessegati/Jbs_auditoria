@@ -22,4 +22,3 @@ function render() {
   if (!audio.supported) document.querySelectorAll('[data-audio-controls]').forEach(node => node.innerHTML = '<p class="audio-unavailable">Áudio não disponível neste navegador. O texto completo permanece disponível.</p>');
 }
 document.addEventListener('DOMContentLoaded', render);
-

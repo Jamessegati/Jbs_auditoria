@@ -1,0 +1,52 @@
+/* Long-form lesson presentation. Shared by the live course and standalone reader. */
+.program-shell>main{min-width:0}
+.program-week{scroll-margin-top:1rem}
+.weekly-chapters{display:block}
+.weekly-chapters>h3,.worked-cases>h3{font-size:1.25rem;margin-bottom:1.3rem}
+.chapter{border:0;border-top:1px solid var(--line);padding:2rem 0;scroll-margin-top:1rem}
+.chapter h3{font-size:clamp(1.2rem,2vw,1.55rem);line-height:1.35;margin-bottom:1rem;max-width:50ch}
+.chapter p,.worked-case p,.worked-case li{font-size:1rem;line-height:1.85;max-width:76ch}
+.chapter p{margin:0 0 1.2rem}
+.chapter-index{display:grid;gap:.65rem;border-left:3px solid var(--teal);padding-left:1rem}
+.chapter-index a{font-size:.9rem;text-decoration-thickness:1px;text-underline-offset:3px}
+.program-week header>.week-outcomes{font-size:.95rem;font-weight:400;letter-spacing:0;color:var(--ink-soft);line-height:1.7}
+.program-week header small,.legal-basis small{font-size:.75rem;color:var(--ink-soft)}
+.simulation-notice{font-size:.82rem;line-height:1.6;background:#fff8e9;border-left:3px solid #b07315;padding:1rem}
+.legal-basis{margin:1rem 0;padding:1rem;background:var(--wash);border-left:3px solid var(--teal);overflow-wrap:anywhere}
+.legal-basis h4{margin:0 0 .5rem;font-size:.8rem}
+.legal-basis ul{margin:.3rem 0;padding-left:1.2rem}
+.legal-basis a{font-size:.84rem;color:var(--violet-deep);line-height:1.6}
+.legal-basis li{margin-bottom:.45rem}
+.worked-case{padding:1.5rem;margin:1rem 0;background:#fff;border:1px solid var(--line)}
+.worked-case h4{margin:0 0 1rem;font-size:1.12rem}
+.worked-case li+li{margin-top:.5rem}
+.case-conclusion{border-left:3px solid var(--teal);padding-left:1rem}
+.flow-text li{position:relative;border:1px solid #cecadf;border-radius:.4rem;padding:1rem;background:#fff;margin-bottom:1rem}
+.flow-text li:not(:last-child)::after{content:'↓';position:absolute;bottom:-1.7rem;left:calc(50% - .5rem);font-size:1.25rem;color:var(--teal)}
+.flow-text li b{font-size:.98rem}
+.flow-text li span{white-space:normal;line-height:1.75}
+.weekly-lab>h3,.lab-solution{grid-column:1/-1}
+.weekly-lab section h4{margin:0 0 .5rem}
+.weekly-lab li{line-height:1.8}
+.lab-solution{border-top:1px solid var(--line);padding-top:1rem}
+summary{cursor:pointer;font-weight:700}
+summary:focus-visible{outline:3px solid var(--sun);outline-offset:4px}
+.lab-solution[open] summary{margin-bottom:1rem}
+.week-todo input{width:1.1rem;height:1.1rem;accent-color:var(--teal);flex:none}
+.week-todo label{display:flex;align-items:flex-start;gap:.5rem;padding:.3rem 0}
+.study-agenda{padding:1rem;border:1px solid var(--line)}
+.study-agenda li{margin-bottom:.8rem}
+.support-videos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem}
+.support-videos>h3{grid-column:1/-1}
+.support-video{min-width:0}
+.support-video iframe{display:block;width:100%;aspect-ratio:16/9;height:auto;border:0;background:#17133d}
+.support-video p,.support-video a{font-size:.8rem;overflow-wrap:anywhere}
+.feedback details{margin:1rem 0}.feedback li{margin:.6rem 0}
+.offline-quiz{max-width:72rem;margin:auto;padding:2rem clamp(1.25rem,6vw,6rem)}
+.offline-question{padding:1.2rem 0;border-top:1px solid var(--line)}
+.offline-question h3{font-size:1rem}
+.reader-actions{display:flex;flex-wrap:wrap;gap:1rem;margin:1rem 0}
+.reader-actions button{padding:.65rem 1rem;border:1px solid var(--line);background:#fff}
+@media(min-width:901px){.program-week{padding-inline:clamp(2rem,5vw,5rem)}.chapter{max-width:76ch}}
+@media(max-width:600px){.support-videos{grid-template-columns:1fr}.worked-case{padding:1rem}.chapter p,.worked-case p,.worked-case li{font-size:.98rem}.program-week,.offline-quiz{overflow-wrap:anywhere}}
+@media print{.program-shell{display:block}.program-rail,.audio-controls,.support-videos,.week-assessment,.reader-actions,.chapter-index{display:none!important}.program-week,.offline-quiz{padding:1rem 0;max-width:none}.program-hero{padding:1rem 0;background:none}.program-hero h1{font-size:2rem;max-width:none}.chapter,.worked-case{box-shadow:none}.chapter p,.worked-case p,.worked-case li{max-width:none;font-size:11pt}.legal-basis{background:none;border:1px solid #999}.program-week{break-before:page}.chapter h3,.worked-case h4{break-after:avoid}.program-week header,.worked-case{break-inside:avoid}.lab-solution::details-content,.offline-question details::details-content{content-visibility:visible}.week-todo input{appearance:none;border:1px solid #333}.study-agenda{display:none}}
