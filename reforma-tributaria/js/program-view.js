@@ -1,0 +1,16 @@
+const escape = value => String(value ?? '').replace(/[&<>]/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' })[char]);
+
+export function weekMarkup(week, sources = new Map(), media = null) {
+  const sourceLinks = week.sourceIds.map(id => {
+    const source = sources.get(id);
+    return source ? `<a href="${escape(source.url)}" target="_blank" rel="noopener noreferrer">${escape(source.title)} <small>${escape(source.kind)}</small></a>` : `<span>Fonte: ${escape(id)}</span>`;
+  }).join('');
+  const chapters = week.chapters.map(chapter => `<article class="chapter" data-audio-text="${escape(chapter.audioText)}"><h3>${escape(chapter.title)}</h3><p>${escape(chapter.body)}</p><div class="audio-controls" data-audio-controls><button type="button" data-speak>Ouvir texto</button><button type="button" data-stop>Parar</button><label>Velocidade <select data-rate><option value="0.9">0,9x</option><option value="1" selected>1x</option><option value="1.25">1,25x</option></select></label></div></article>`).join('');
+  const flow = week.flow.steps.map((step, index) => `<li><b>${String(index + 1).padStart(2, '0')} · ${escape(step.label)}</b><span>${escape(step.detail)}</span></li>`).join('');
+  const todo = week.todo.map(item => `<label><input type="checkbox" data-week="${week.id}" data-todo="${item.id}"> ${escape(item.label)}</label>`).join('');
+  const labList = (title, items) => `<section><h4>${title}</h4><ul>${items.map(item => `<li>${escape(item)}</li>`).join('')}</ul></section>`;
+  const mediaMarkup = media?.recordingUrl ? `<a class="recording-link" href="${escape(media.recordingUrl)}" target="_blank" rel="noopener noreferrer">Assistir à gravação</a>` : '<p class="media-pending">Gravação da aula será vinculada aqui.</p>';
+  const videos = (media?.supportVideos || []).map(video => `<div class="support-video"><iframe src="https://www.youtube-nocookie.com/embed/${video.youtubeId}" title="Vídeo: ${escape(video.title)}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe><p>${escape(video.title)}</p></div>`).join('');
+  return `<article class="program-week" id="${week.id}"><header><p>SEMANA ${String(week.number).padStart(2, '0')} · 6 HORAS</p><h2>${escape(week.title)}</h2><p>${escape(week.outcomes[0])}</p></header><section class="weekly-chapters"><h3>Leitura guiada</h3>${chapters}</section><section class="decision-flow"><h3>${escape(week.flow.title)}</h3><ol class="flow-text">${flow}</ol></section><aside class="week-sources"><h3>Fontes e materiais</h3>${sourceLinks}${mediaMarkup}</aside>${videos ? `<section class="support-videos"><h3>Vídeos de apoio</h3>${videos}</section>` : ''}<section class="week-todo"><h3>ToDoList semanal</h3>${todo}</section><section class="weekly-lab"><h3>Laboratório aplicado</h3>${labList('Fatos', week.lab.facts)}${labList('Documentos', week.lab.documents)}${labList('Decisões', week.lab.decisions)}${labList('Evidências esperadas', week.lab.evidence)}</section><section class="week-assessment"><h3>Avaliação da semana</h3><p>Meta de aprovação: 80%. Revise e refaça se ficar abaixo da meta.</p><a href="questionario.html#${week.id}">Abrir avaliação</a></section></article>`;
+}
+
