@@ -1,0 +1,34 @@
+#notas-root{max-width:980px;margin:0 auto;padding:32px 20px 64px;display:grid;gap:20px}
+#notas-root h1{font-size:clamp(1.6rem,3vw,2.2rem);margin:.2em 0 .3em}
+#notas-root h2{font-size:1.1rem;margin:0}
+.eyebrow{color:var(--violet-deep);font-weight:700;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;margin:0}
+.page-head p{color:var(--ink-soft);max-width:62ch;margin:0}
+.tabs{display:flex;flex-wrap:wrap;gap:8px}
+.tab{font:inherit;font-weight:600;padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink);cursor:pointer}
+.tab:hover{border-color:var(--violet)}
+.tab.active{background:var(--violet-deep);border-color:var(--violet-deep);color:#fff}
+.tab:focus-visible,#notas-root input:focus-visible,#notas-root select:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.params{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:14px}
+.params label{display:grid;gap:6px;font-weight:600;font-size:.9rem}
+.params input,.params select{font:inherit;padding:9px 10px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+.rates{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+.hint{margin:0;color:var(--ink-soft);font-size:.85rem}
+.nota{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
+.nota header{padding:18px 20px;border-bottom:1px solid var(--line);display:grid;gap:10px}
+.badge{margin:0;display:inline-block;justify-self:start;background:var(--wash);color:var(--violet-deep);font-weight:800;font-size:.72rem;letter-spacing:.06em;padding:4px 10px;border-radius:999px}
+.nota dl{margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.nota dt{font-size:.75rem;color:var(--ink-soft)}
+.nota dd{margin:2px 0 0;font-weight:600}
+.table-wrap{overflow-x:auto}
+.nota table{width:100%;border-collapse:collapse;font-size:.92rem}
+.nota th,.nota td{padding:10px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.nota thead th{background:var(--wash);font-size:.78rem;text-transform:uppercase;letter-spacing:.04em}
+.nota .num{text-align:right;white-space:nowrap}
+.nota .code{font-variant-numeric:tabular-nums;font-weight:700;color:var(--teal)}
+.nota small{color:var(--ink-soft)}
+.nota tfoot th{text-align:right;font-weight:600}
+.nota tfoot .grand th,.nota tfoot .grand td{font-weight:800;border-top:2px solid var(--ink)}
+.comment{margin:0;padding:14px 20px;background:var(--wash);color:var(--ink-soft)}
+.notice{color:var(--ink-soft);font-size:.85rem;display:grid;gap:6px}
+.notice p{margin:0}
+@media print{.tabs,.params{display:none}}
