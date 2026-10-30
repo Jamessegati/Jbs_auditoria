@@ -1,4 +1,14 @@
+import { splitCallout } from './callouts.js';
 export const escape = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
+function paragraphMarkup(text) {
+  const part = splitCallout(text);
+  if (!part.tag) return `<p>${escape(part.text)}</p>`;
+  const items = part.text.split(' | ');
+  const body = part.tag === 'passos' ? `<ol>${items.map(item => `<li>${escape(item)}</li>`).join('')}</ol>`
+    : (part.tag === 'glossario' || part.tag === 'codigos') ? `<ul>${items.map(item => `<li>${escape(item)}</li>`).join('')}</ul>`
+    : `<p>${escape(part.text)}</p>`;
+  return `<aside class="callout callout-${part.tag}"><strong>${escape(part.label)}</strong>${body}</aside>`;
+}
 
 export function legalMarkup(references = [], sources = new Map()) {
   if (!references.length) return '';
@@ -20,7 +30,7 @@ export function weekMarkup(week, sources = new Map(), media = null) {
     return source ? `<a href="${escape(source.url)}" target="_blank" rel="noopener noreferrer">${escape(source.title)} <small>${escape(source.kind)}</small></a>` : `<span>Fonte: ${escape(id)}</span>`;
   }).join('');
   const list = items => `<ul>${items.map(item => `<li>${escape(item)}</li>`).join('')}</ul>`;
-  const chapters = week.chapters.map(chapter => `<article class="chapter" id="${escape(chapter.id)}" data-audio-text="${escape(chapter.audioText)}"><h3>${escape(chapter.title)}</h3>${(chapter.paragraphs || [chapter.body]).map(p => `<p>${escape(p)}</p>`).join('')}${legalMarkup(chapter.legalRefs, sources)}<div class="audio-controls" data-audio-controls><button type="button" data-speak>Ouvir capítulo</button><button type="button" data-stop>Parar</button><label>Velocidade <select data-rate><option value="0.9">0,9x</option><option value="1" selected>1x</option><option value="1.25">1,25x</option></select></label></div></article>`).join('');
+  const chapters = week.chapters.map(chapter => `<article class="chapter" id="${escape(chapter.id)}" data-audio-text="${escape(chapter.audioText)}"><h3>${escape(chapter.title)}</h3>${(chapter.paragraphs || [chapter.body]).map(paragraphMarkup).join('')}${legalMarkup(chapter.legalRefs, sources)}<div class="audio-controls" data-audio-controls><button type="button" data-speak>Ouvir capítulo</button><button type="button" data-stop>Parar</button><label>Velocidade <select data-rate><option value="0.9">0,9x</option><option value="1" selected>1x</option><option value="1.25">1,25x</option></select></label></div></article>`).join('');
   const cases = (week.cases || []).map(item => `<article class="worked-case"><h4>${escape(item.title)}</h4>${list(item.facts)}<ol>${item.steps.map(step => `<li>${escape(step)}</li>`).join('')}</ol><p class="case-conclusion"><strong>Conclusão:</strong> ${escape(item.conclusion)}</p>${legalMarkup(item.legalRefs, sources)}</article>`).join('');
   const flow = week.flow.steps.map((step, index) => `<li><b>${String(index + 1).padStart(2, '0')} · ${escape(step.label)}</b><span>${escape(step.detail)}</span></li>`).join('');
   const todo = week.todo.map(item => `<label><input type="checkbox" data-week="${escape(week.id)}" data-todo="${escape(item.id)}"> ${escape(item.label)}</label>`).join('');

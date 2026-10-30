@@ -50,3 +50,15 @@ summary:focus-visible{outline:3px solid var(--sun);outline-offset:4px}
 @media(min-width:901px){.program-week{padding-inline:clamp(2rem,5vw,5rem)}.chapter{max-width:76ch}}
 @media(max-width:600px){.support-videos{grid-template-columns:1fr}.worked-case{padding:1rem}.chapter p,.worked-case p,.worked-case li{font-size:.98rem}.program-week,.offline-quiz{overflow-wrap:anywhere}}
 @media print{.program-shell{display:block}.program-rail,.audio-controls,.support-videos,.week-assessment,.reader-actions,.chapter-index{display:none!important}.program-week,.offline-quiz{padding:1rem 0;max-width:none}.program-hero{padding:1rem 0;background:none}.program-hero h1{font-size:2rem;max-width:none}.chapter,.worked-case{box-shadow:none}.chapter p,.worked-case p,.worked-case li{max-width:none;font-size:11pt}.legal-basis{background:none;border:1px solid #999}.program-week{break-before:page}.chapter h3,.worked-case h4{break-after:avoid}.program-week header,.worked-case{break-inside:avoid}.lab-solution::details-content,.offline-question details::details-content{content-visibility:visible}.week-todo input{appearance:none;border:1px solid #333}.study-agenda{display:none}}
+
+/* Quadros de apoio dos capítulos */
+.callout{margin:16px 0;padding:14px 16px;border-left:4px solid var(--violet);border-radius:10px;background:var(--wash);color:var(--ink)}
+.callout>strong{display:block;margin-bottom:6px;font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;color:var(--violet-deep)}
+.callout p{margin:0}
+.callout ol,.callout ul{margin:0;padding-left:1.25em;display:grid;gap:4px}
+.callout-exemplo{border-left-color:var(--teal)}
+.callout-exemplo>strong{color:var(--teal)}
+.callout-atencao{border-left-color:var(--sun);background:#fff6e5}
+.callout-atencao>strong{color:#8a5a00}
+.callout-dica{border-left-color:var(--success)}
+.callout-dica>strong{color:var(--success)}
